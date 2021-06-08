@@ -11,14 +11,24 @@ type Config struct {
 	UserConfig `mapstructure:",squash"`
 }
 
+// type DBConfig struct {
+// 	Db_name string `mapstructure:"DBNAME"`
+// 	Db_pass string `mapstructure:"DBPASS"`
+// }
+
+// type UserConfig struct {
+// 	User_name string `mapstructure:"USERNAME"`
+// 	User_pass string `mapstructure:"USERPASS"`
+// }
+
 type DBConfig struct {
-	Db_name string `mapstructure:"DBNAME"`
-	Db_pass string `mapstructure:"DBPASS"`
+	Dbname string 
+	Dbpass string 
 }
 
 type UserConfig struct {
-	User_name string `mapstructure:"USERNAME"`
-	User_pass string `mapstructure:"USERPASS"`
+	Username string 
+	Userpass string 
 }
 
 func main() {
@@ -43,19 +53,19 @@ func main() {
 		fmt.Println("Error reading config", err)
 	}
 
-	fmt.Println(config)
-	fmt.Println(config.DBConfig.Db_name)
-	fmt.Println(config.DBConfig.Db_pass)
-	fmt.Println(config.UserConfig.User_name)
-	fmt.Println(config.UserConfig.User_pass)
+	// fmt.Println(config)
+	fmt.Println(config.DBConfig.Dbname)
+	fmt.Println(config.DBConfig.Dbpass)
+	fmt.Println(config.UserConfig.Username)
+	fmt.Println(config.UserConfig.Userpass)
 
-	printDBConfig(config.DBConfig)
+	// printDBConfig(config.DBConfig)
 	
 
 }
 
-func printDBConfig(dbConfig DBConfig){
-	fmt.Println(dbConfig.Db_name)
-	fmt.Println(dbConfig.Db_pass)
+// func printDBConfig(dbConfig DBConfig){
+// 	fmt.Println(dbConfig.Db_name)
+// 	fmt.Println(dbConfig.Db_pass)
 
-}
+// }
